@@ -166,23 +166,21 @@ Copy code
 weighted avg       1.00      1.00      1.00       118
 Precision, Recall, and F1-Score (1.00 for both classes):
 
-Precision measures how many of the predicted positive instances (CKD or not-CKD) were actually correct. A perfect precision of 1.00 means all predicted CKD and non-CKD instances were correct.
-Recall tells us how many of the actual CKD or non-CKD cases were identified by the model. A recall of 1.00 means the model identified every instance correctly.
-F1-score is the harmonic mean of precision and recall, and having a value of 1.00 reflects that the model perfectly balances both precision and recall.
+Precision is how many of those forecasted positive cases were actually correct. The perfect precision, reading 1.00, means all CKD and non-CKD cases which the model forecast were correct. Recall refers to how many of those CKD or non-CKD cases that were actually present could be identified by the model. A recall of 1.00 means that it rightly precited each instance.
+The F1-score is the harmonic mean of precision and recall, and 1.00 means that the model has a perfect balance between precision and recall.
 Confusion Matrix:
 
-The matrix shows that the model made no mistakes in classification. It correctly classified all 77 CKD cases and all 41 non-CKD cases.
-Interpretation:
+This matrix shows that there were no misclassifications on the part of the model. It correctly classified all the 77 CKD cases and all the 41 non-CKD cases.
+Explanation:
 
-The classification report and confusion matrix show that the model performed flawlessly on the test set, perfectly predicting both CKD and non-CKD cases. While this is excellent, achieving a perfect score in real-world scenarios is rare, suggesting that either the data is simple or very well-prepared, or the model might be overfitting to the specific characteristics of this dataset.
+The classification report and confusion matrix obtained show that the performance of the model on this test set has been flawless: it perfectly predicted both CKD and non-CKD cases. As perfect as this may sound, in the real world, perfection is usually unreachable; this means the data could either be simple or very well prepared, or the model overfits to the specific characteristics of this dataset.
+
 3. Feature Importance
-
 
 Top Features:
 
-rbcc (Red Blood Cell Count), pcv (Packed Cell Volume), and sg (Specific Gravity) are the most important features for predicting CKD. This aligns with medical insights, as these variables are significant indicators of kidney function and overall health.
-Other important features include hemo (Hemoglobin), sc (Serum Creatinine), and al (Albumin), all of which are medically relevant in diagnosing CKD.
-Interpretation:
+The most predictive features of CKD were features rbcc, pcv, and sg for predicting CKD. This makes medical sense since these are some of the very important signs of renal health, as well as general health.
+Other strong features included hemo, sc, and al, all medically relevant in diagnosis of CKD.
 
-The model places the highest importance on features related to blood and kidney function, which makes sense given the nature of CKD. This shows that the model's decision-making aligns with real-world clinical knowledge, further validating its predictive capability.
-The least important features, such as ba (Bacteria), cad (Coronary Artery Disease), and pe (Pedal Edema), contribute very little to the model's predictions. This could mean these features are either less informative for CKD diagnosis or less frequent in this dataset.
+It gives the highest importance to features related to blood and kidney function, which makes a lot of sense with the nature of CKD. This provides evidence that the decision-making of this model agrees with real-world clinical knowledge and further validates its predictive capability.
+The least important features in the predictions are ba (Bacteria), cad (Coronary Artery Disease), and pe (Pedal Edema) with a fraction of zero. This may indicate that these features either are not that informative in the diagnostics of CKD or simply don't show up very often in this dataset.
